@@ -73,7 +73,7 @@
         <div id="domelist"></div>
         <script type="text/javascript">
             $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
-            let webesock = new WebSocket("ws://" + document.domain + ":" + {{ sockport }} + "/");
+            let webesock = new WebSocket("ws://35.231.107.163:6969/");
             console.log("WebSocket is supposed to be at ws://" + document.domain + ":{{ sockport }}/");
             webesock.onmessage = function (event)
             {

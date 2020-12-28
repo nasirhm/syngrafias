@@ -23,6 +23,7 @@ from hashlib import sha256
 import json
 import time
 from flask import Flask, render_template, request, jsonify, send_from_directory
+import os
 
 
 servchat = Flask(__name__, template_folder="../templates", static_folder="../static")
@@ -83,3 +84,6 @@ def mainfunc(servport, sockport, netprotc):
             print(" * IP version  : 4")
             netpdata = "0.0.0.0"
         colabnow(netpdata, servport)
+
+if __name__ == "__main__":
+    mainfunc(os.getenv("PORT"), "35.231.107.163:6969", "ipprotv4")
